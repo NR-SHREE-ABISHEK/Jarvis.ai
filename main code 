@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+using namespace std;
+void speak(string text)
+{
+    cout << "Jarvis: " << text << endl;
+}
+string getTime()
+{
+time_t now = time(0);
+tm *ltm = localtime(&now);
+char buffer[20];
+strftime(buffer, sizeof(buffer), "%I:%M %p", ltm);
+return string(buffer);
+}
+int main()
+{
+string command;
+speak("Jarvis Activated");
+while (true)
+{
+cout << "\nEnter command: ";
+getline(cin, command);
+for (auto &c : command) c = tolower(c);
+if (command.find("time") != string::npos)
+{
+string time = getTime();
+speak("Current time is " + time);
+}
+else if (command.find("who are you") != string::npos)
+{
+speak("i am ai assistance better than chat gpt");
+}
+else if (command.find("say about my self") != string::npos)
+{
+speak("you are the young developer aim to create AI");
+}
+else if (command.find("play music") != string::npos)
+{
+speak("Music feature not available");
+}
+else if (command.find("say about you") != string::npos)
+{
+speak("I am Jarvis, your assistant");
+}
+else if (command.find("bye") != string::npos || command.find("exit") != string::npos)
+{
+speak("Goodbye boss");
+break;
+}
+else if (!command.empty())
+{
+speak("Sorry, I didn't understand");
+}
+}
+return 0;
+}
