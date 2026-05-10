@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include<cstdlib>
 using namespace std;
 void speak(string text)
 {
@@ -43,6 +44,11 @@ speak("Music feature not available");
 else if (command.find("say about you") != string::npos)
 {
 speak("I am Jarvis, your assistant");
+}
+else if(command.find("youtube")!=string::npos)
+{
+speak("wait pannu da pulla")
+system(start https://www.youtube.com");
 }
 else if (command.find("bye") != string::npos || command.find("exit") != string::npos)
 {
