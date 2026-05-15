@@ -47,8 +47,7 @@ speak("I am Jarvis, your assistant");
 }
 else if(command.find("youtube")!=string::npos)
 {
-speak("wait pannu da pulla")
-system(start https://www.youtube.com");
+speak("youtube illa da pulla");
 }
 else if (command.find("bye") != string::npos || command.find("exit") != string::npos)
 {
